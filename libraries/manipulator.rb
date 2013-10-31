@@ -195,7 +195,7 @@ class Manipulator
     # @return [String]
     #   the sha of the current hostsfile
     def current_sha
-      @current_sha ||= Digest::SHA512.hexdigest(File.read(hostsfile_path))
+      @current_sha = Digest::SHA512.hexdigest(File.read(hostsfile_path))
     end
 
     # Normalize the given list of elements into a single array with no nil
